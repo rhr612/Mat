@@ -1,19 +1,19 @@
-
-clear;
 clc;
+clear; 
+
+syms z
+
+x=input('Input Sequence:');
+
+n1= length(x) - 1; 
 
 
-sequence = [2, 2, 2, 1, 1, 0, 2, 2];
+result=0; 
 
+for i= 0:n1
+result= result + x(i+1)*z^(-i);
 
-syms z;
-
-X_z = 0;
-
-
-for n = 0:length(sequence)-1
-    X_z = X_z + sequence(n+1) * z^(-n);
 end
 
-
-disp(X_z);
+disp('X(Z):') 
+disp(result)
