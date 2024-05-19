@@ -1,0 +1,21 @@
+% Clear workspace and command window
+clear;
+clc;
+
+% Define the sequence 22211022
+sequence = [2, 2, 2, 1, 1, 0, 2, 2];
+
+% Define symbolic variable z
+syms z;
+
+% Initialize the Z-transform
+X_z = 0;
+
+% Calculate the Z-transform
+for n = 0:length(sequence)-1
+    X_z = X_z + sequence(n+1) * z^(-n);
+end
+
+% Display the result
+fprintf('The Z-transform of the sequence [2, 2, 2, 1, 1, 0, 2, 2] is:\n');
+disp(X_z);
